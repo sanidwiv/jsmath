@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <main role="main" class="container">
+
+        <div id="menu">
+            <div class="row mt-5">
+                <div class="col-md-12">
+                    <h1>JS Math</h1>
+                    <p class="mb-5">This application teaches primary school students steps of multiplication and long division. It randomly generates numbers and walks the students through each step. In assessment mode, it can generate large number of random questions and find the number of correct answers.</p>
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for="operation">Choose Operation</label>
+                    <select class="custom-select" id="operation">
+                          <option value="multiply">Multiplication</option>
+                          <option value="divide">Long Division</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="mode">Enable Assessment</label>
+                  <div class="custom-control custom-switch">
+                  <input type="checkbox" class="custom-control-input" id="mode">
+                  <label class="custom-control-label" for="mode">Assessment Mode</label>
+                </div>
+                    <small class="text-muted">The application will keep track of the number of  correct answers</small>
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for="num1_digits">Number of Digits (One)</label>
+                    <select class="custom-select" id="num1_digits">
+                          <option value="1">1</option>
+                          <option value="2">Two</option>
+                          <option value="3">Three</option>
+                    </select>
+
+                    <small class="text-muted">This will be dividend or multiplicand</small>
+
+                </div>
+                <div class="col-md-6 form-group">
+                    <label for="num2_digits">Number of Digits (Two)</label>
+
+                    <select class="custom-select" id="num2_digits">
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="3">3</option>
+                    </select>
+
+                                        <small class="text-muted">This will be divisor or multiplier</small>
+
+
+                </div>
+                <div class="col-md-6">
+                    <button class="btn btn-primary btn-block">sss</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- carry -->
+        <div class="row mt-4" id="carry-row">
+
+        </div>
+            <hr class="border-secondary"/>
+
+
+        <!-- multiplicand -->
+        <div class="row mt-4">
+            <div class="col-1" id="num1-row-1">
+            </div>
+            <div class="col-1" id="num1-row-2">
+            </div>
+            <div class="col-1" id="num1-row-3">
+            </div>
+            <div class="col-1" id="num1-row-4">
+            </div>
+            <div class="col-1" id="num1-row-5">
+            </div>
+            <div class="col-1" id="num1-row-6">
+            </div>
+            <div class="col-1" id="num1-row-7">
+            </div>
+            <div class="col-1" id="num1-row-8">
+            </div>
+            <div class="col-1" id="num1-row-9">
+            </div>
+            <div class="col-1" id="num1-row-10">
+            </div>
+            <div class="col-1" id="num1-row-11">
+            </div>
+            <div class="col-1" id="num1-row-12">
+            </div>
+        </div>
+
+        <!-- multiplier -->
+        <div class="row mt-4">
+           <div class="col-1" id="num2-row-1">
+           </div>
+           <div class="col-1" id="num2-row-2">
+           </div>
+           <div class="col-1" id="num2-row-3">
+           </div>
+           <div class="col-1" id="num2-row-4">
+           </div>
+           <div class="col-1" id="num2-row-5">
+           </div>
+           <div class="col-1" id="num2-row-6">
+           </div>
+           <div class="col-1" id="num2-row-7">
+           </div>
+           <div class="col-1" id="num2-row-8">
+           </div>
+           <div class="col-1" id="num2-row-9">
+           </div>
+           <div class="col-1" id="num2-row-10">
+           </div>
+           <div class="col-1" id="num2-row-11">
+           </div>
+           <div class="col-1" id="num2-row-12">
+           </div>
+       </div>
+
+        <hr class="border-secondary"/>
+        <!-- carry for answers -->
+        <div class="row mt-1">
+           <div class="col-1" id="answer-carry-1">
+           </div>
+           <div class="col-1" id="answer-carry-2">
+           </div>
+           <div class="col-1" id="answer-carry-3">
+           </div>
+           <div class="col-1" id="answer-carry-4">
+           </div>
+           <div class="col-1" id="answer-carry-5">
+           </div>
+           <div class="col-1" id="answer-carry-6">
+           </div>
+           <div class="col-1" id="answer-carry-7">
+           </div>
+           <div class="col-1" id="answer-carry-8">
+           </div>
+           <div class="col-1" id="answer-carry-9">
+           </div>
+           <div class="col-1" id="answer-carry-10">
+           </div>
+           <div class="col-1" id="answer-carry-11">
+           </div>
+           <div class="col-1" id="answer-carry-12">
+           </div>
+        </div>
+        <div id="steps">
+        </div>
+
+        <hr class="border-secondary"/>
+        <!-- answer -->
+        <div class="row mt-2">
+           <div class="col-1" id="answer-row-1">
+           </div>
+           <div class="col-1" id="answer-row-2">
+           </div>
+           <div class="col-1" id="answer-row-3">
+           </div>
+           <div class="col-1" id="answer-row-4">
+           </div>
+           <div class="col-1" id="answer-row-5">
+           </div>
+           <div class="col-1" id="answer-row-6">
+           </div>
+           <div class="col-1" id="answer-row-7">
+           </div>
+           <div class="col-1" id="answer-row-8">
+           </div>
+           <div class="col-1" id="answer-row-9">
+           </div>
+           <div class="col-1" id="answer-row-10">
+           </div>
+           <div class="col-1" id="answer-row-11">
+           </div>
+           <div class="col-1" id="answer-row-12">
+           </div>
+        </div>
+
+        <hr class="border-secondary"/>
+        <!-- Input Buttons -->
+        <div class="row ">
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-1">
+                </div>
+                <div class="col-2">
+                    <button class="btn btn-lg btn-primary btn-block" onclick="input(1);">1</button>
+                </div>
+                <div class="col-2">
+                    <button class="btn btn-lg btn-primary btn-block" onclick="input(2);">2</button>
+                </div>
+                <div class="col-2">
+                    <button class="btn btn-lg btn-primary btn-block" onclick="input(3);">3</button>
+                </div>
+            <div class="col-2">
+                    <button class="btn btn-lg btn-primary btn-block" onclick="input(4);">4</button>
+                </div>
+                <div class="col-2">
+                    <button class="btn btn-lg btn-primary btn-block" onclick="input(5);">5</button>
+                </div>
+                    <div class="col-1">
+                </div>
+                </div>
+                </div>
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-1">
+                </div>
+                <div class="col-2">
+                    <button class="btn btn-lg btn-primary btn-block" onclick="input(6);">6</button>
+                </div>
+            <div class="col-2">
+                    <button class="btn btn-lg btn-primary btn-block" onclick="input(7);">7</button>
+                </div>
+                <div class="col-2">
+                    <button class="btn btn-lg btn-primary btn-block" onclick="input(8);">8</button>
+                </div>
+                <div class="col-2">
+                    <button class="btn btn-lg btn-primary btn-block" onclick="input(9);">9</button>
+                </div>
+            <div class="col-2">
+                    <button class="btn btn-lg btn-primary btn-block" onclick="input(0);">0</button>
+                </div>
+                    <div class="col-1">
+                </div>
+                </div>
+                </div>
+
+        </div>
+      </main>
+
+    <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/jsmath.js"></script>
+  <script>
+
+      n1 = 3;
+      n2 = 2;
+      num1 = gen_rand(n1);
+      num2 = gen_rand(n2);
+      num1_array = num_to_array(num1);
+      num2_array = num_to_array(num2);
+      answer_array = num_to_array(num1*num2);
+      var steps_array = [];
+      var steps_array_padded = [];
+      for (var i=n2-1; i>=0; i--){
+          temp_arr = num_to_array(num1*num2_array[i]);
+          steps_array.push(temp_arr);
+          // Create one more copy for which will be padded later on
+          steps_array_padded.push([...temp_arr]);
+      }
+      //alert(steps_array);
+      var carry_array = [];
+      for (var i=n2-1; i >= 0; i--){
+          var carry = 0;
+          temp_arr = [];
+          for (var j=n1-1;j >= 0; j--){
+              carry = Math.floor((num1_array[j]*num2_array[i]+carry) / 10);
+              temp_arr.unshift(carry);
+          }
+          carry_array.push(temp_arr);
+      }
+      //alert(carry_array);
+      //Carry for answers
+      var carry_answer = [];
+
+      // Compute carry for answer
+      ans_length = answer_array.length;
+      for (var i =0; i< n2;i++) {
+          fill_array(steps_array_padded[i],ans_length-i-steps_array[i].length,i);
+      }
+      for (var i=0;i<ans_length;i++) {
+          sum = 0;
+          for(var j=0;j < n2;j++) {
+              sum = sum + steps_array_padded[i];
+          }
+          if(answer_array[i] < sum) {
+              carry_answer.push(10+answer_array[i]-sum);
+          }else {
+              carry_answer.push(0);
+          }
+      }
+
+      // Initialize the array
+      is_carry = false;
+      steps_index = steps_array[0].length-1;
+      carry_index = carry_array[0].length-1;
+      answer_index = answer_array.length-1;
+      steps_row = 0;
+      carry_row = 0;
+      answer_step = false;
+      game_over = false;
+      // Start
+      init();
+      put_blank();
+      clear_carry();
+      show_active();
+      screen.orientation.lock('landscape');
+
+
+      //Enable Keyboard in desktops
+      document.addEventListener('keydown', function(event) {
+          num = parseInt(event.key);
+          if (!isNaN(num)){
+              input(num);
+          }
+    });
+
+
+  </script>
+  </body>
+</html>
