@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+          integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+</head>
+<body>
+<main role="main" class="container">
+
+    <!-- Multiplication App -->
+    <div id="multiplication_app">
+        <!-- answer -->
+        <div class="row mt-2">
+            <div class="col-1" id="answer-row-1">
+            </div>
+            <div class="col-1" id="answer-row-2">
+            </div>
+            <div class="col-1" id="answer-row-3">
+            </div>
+            <div class="col-1" id="answer-row-4">
+            </div>
+            <div class="col-1" id="answer-row-5">
+            </div>
+            <div class="col-1" id="answer-row-6">
+            </div>
+            <div class="col-1" id="answer-row-7">
+            </div>
+            <div class="col-1" id="answer-row-8">
+            </div>
+            <div class="col-1" id="answer-row-9">
+            </div>
+            <div class="col-1" id="answer-row-10">
+            </div>
+            <div class="col-1" id="answer-row-11">
+            </div>
+            <div class="col-1" id="answer-row-12">
+            </div>
+        </div>
+
+    </div>
+    <hr class="border-secondary"/>
+
+    <!-- numbers -->
+    <div class="row mt-4">
+        <div class="col-1" id="num-row-1">
+        </div>
+        <div class="col-1" id="num-row-2">
+        </div>
+        <div class="col-1" id="num-row-3">
+        </div>
+        <div class="col-1" id="num-row-4">
+        </div>
+        <div class="col-1" id="num-row-5">
+        </div>
+        <div class="col-1" id="num-row-6">
+        </div>
+        <div class="col-1" id="num-row-7">
+        </div>
+        <div class="col-1" id="num-row-8">
+        </div>
+        <div class="col-1" id="num-row-9">
+        </div>
+        <div class="col-1" id="num-row-10">
+        </div>
+        <div class="col-1" id="num-row-11">
+        </div>
+        <div class="col-1" id="num-row-12">
+        </div>
+    </div>
+
+    <hr class="border-secondary"/>
+
+    <div id="steps">
+    </div>
+
+    <hr class="border-secondary"/>
+
+
+    </div>
+    <!-- End Division App -->
+
+
+    <!-- Input Buttons -->
+    <div id="input_buttons"
+    ">
+    <hr class="border-secondary"/>
+    <div class="row mb-4 mt-2">
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-1">
+                </div>
+                <div class="col-2">
+                    <button class="btn btn-lg btn-primary btn-block" onclick="input(1);">1</button>
+                </div>
+                <div class="col-2">
+                    <button class="btn btn-lg btn-primary btn-block" onclick="input(2);">2</button>
+                </div>
+                <div class="col-2">
+                    <button class="btn btn-lg btn-primary btn-block" onclick="input(3);">3</button>
+                </div>
+                <div class="col-2">
+                    <button class="btn btn-lg btn-primary btn-block" onclick="input(4);">4</button>
+                </div>
+                <div class="col-2">
+                    <button class="btn btn-lg btn-primary btn-block" onclick="input(5);">5</button>
+                </div>
+                <div class="col-1">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-1">
+                </div>
+                <div class="col-2">
+                    <button class="btn btn-lg btn-primary btn-block" onclick="input(6);">6</button>
+                </div>
+                <div class="col-2">
+                    <button class="btn btn-lg btn-primary btn-block" onclick="input(7);">7</button>
+                </div>
+                <div class="col-2">
+                    <button class="btn btn-lg btn-primary btn-block" onclick="input(8);">8</button>
+                </div>
+                <div class="col-2">
+                    <button class="btn btn-lg btn-primary btn-block" onclick="input(9);">9</button>
+                </div>
+                <div class="col-2">
+                    <button class="btn btn-lg btn-primary btn-block" onclick="input(0);">0</button>
+                </div>
+                <div class="col-1">
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+    <!-- End Input Buttons -->
+</main>
+
+<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+        crossorigin="anonymous"></script>
+<script src="js/utils.js"></script>
+<script src="js/div.js"></script>
+<script>
+
+    // Global variables
+    // It can in either answer, multiplication or subtraction step
+    step = 'answer';
+    number_index = 0;
+    answer_index = 0;
+    mul_row = 0;
+    sub_row = 0;
+    game_over = false;
+
+    // GET params
+    var queryDict = {};
+    location.search.substr(1).split("&").forEach(function (item) {
+        queryDict[item.split("=")[0]] = item.split("=")[1]
+    });
+    n1 = queryDict['n1'];
+    n2 = queryDict['n2'];
+
+
+    num1 = gen_rand(n1);
+    num2 = gen_rand(n2);
+    num1_array = num_to_array(num1);
+    num2_array = num_to_array(num2);
+    answer_array = num_to_array(Math.floor(num2 / num1));
+
+    var mult_array = [];
+    for (var i = 0; i < answer_array.length; i++) {
+        if (answer_array[i] != 0){
+            temp_arr = num_to_array(num1 * answer_array[i]);
+            mult_array.push(temp_arr);
+        }
+    }
+    var sub_array = [];
+    var j = 0;
+    for (var i = 0; i < num2_array.length; i++) {
+        num = 10*num + num2_array[i];
+        mult = array_to_num(mult_array[j]);
+        if (num > mult){
+            sub = num - mult;
+            sub_array.push(num_to_array(sub));
+            j = j+1;
+            num = sub;
+        }
+    }
+
+    // Start
+    init();
+    put_blank();
+    show_active();
+    screen.orientation.lock('landscape');
+
+
+    //Enable Keyboard in desktops
+    document.addEventListener('keydown', function (event) {
+        num = parseInt(event.key);
+        if (!isNaN(num)) {
+            input(num);
+        }
+    });
+
+
+</script>
+</body>
+</html>
